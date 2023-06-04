@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.Tests", "UI.Tests\UI.Tests.csproj", "{86699FC7-C893-4A4C-BA77-0A6830DA555D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.PageObject", "UI.PageObject\UI.PageObject.csproj", "{CA2FB31A-E7F1-4BCD-8EAC-78B7A7A8AFFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{EF017F8E-E7A2-40BE-B80E-7B82B8CD1AEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Tests", "API.Tests\API.Tests.csproj", "{8852A20B-10D3-4EFB-B77B-1DD380B95926}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{618BEDED-937D-45E1-85D5-862C5F2657F9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+		run-tests-in-docker.yml = run-tests-in-docker.yml
+		run-tests-in-selenium-standalone-chrome.yml = run-tests-in-selenium-standalone-chrome.yml
+		run-tests-in-jenkins-in-volume.yml = run-tests-in-jenkins-in-volume.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JenkinsSettings", "JenkinsSettings", "{D40E8DFF-9C32-4586-911A-BA13BE5FE2EF}"
+	ProjectSection(SolutionItems) = preProject
+		JenkinsSettings\config.xml = JenkinsSettings\config.xml
+		JenkinsSettings\Dockerfile = JenkinsSettings\Dockerfile
+		JenkinsSettings\plugins.txt = JenkinsSettings\plugins.txt
+		JenkinsSettings\setup.groovy = JenkinsSettings\setup.groovy
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86699FC7-C893-4A4C-BA77-0A6830DA555D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86699FC7-C893-4A4C-BA77-0A6830DA555D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86699FC7-C893-4A4C-BA77-0A6830DA555D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86699FC7-C893-4A4C-BA77-0A6830DA555D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA2FB31A-E7F1-4BCD-8EAC-78B7A7A8AFFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2FB31A-E7F1-4BCD-8EAC-78B7A7A8AFFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2FB31A-E7F1-4BCD-8EAC-78B7A7A8AFFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2FB31A-E7F1-4BCD-8EAC-78B7A7A8AFFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF017F8E-E7A2-40BE-B80E-7B82B8CD1AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF017F8E-E7A2-40BE-B80E-7B82B8CD1AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF017F8E-E7A2-40BE-B80E-7B82B8CD1AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF017F8E-E7A2-40BE-B80E-7B82B8CD1AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8852A20B-10D3-4EFB-B77B-1DD380B95926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8852A20B-10D3-4EFB-B77B-1DD380B95926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8852A20B-10D3-4EFB-B77B-1DD380B95926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8852A20B-10D3-4EFB-B77B-1DD380B95926}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F17B7A8-C7A5-44B7-9182-036A2FE4F386}
+	EndGlobalSection
+EndGlobal

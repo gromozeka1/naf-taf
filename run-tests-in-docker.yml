@@ -1,0 +1,26 @@
+# Running UI and API tests in separate docker containers
+# To execute this docker-compose yml file use `docker compose -f run-tests-in-docker.yml up`
+# Add the `-d` flag at the end for detached execution
+# To stop the execution, hit Ctrl+C, and then `docker compose -f run-tests-in-docker.yml down`
+
+version: '3'
+services:    
+  ui_tests:
+    image: ui_test
+    container_name: ui_tests
+    build:
+      context: .
+      dockerfile: ./UI.Tests/Dockerfile
+    command: dotnet test --no-build
+    volumes:
+      - C:\Reports\RunTestsInDocker\UI:/project/UI.Tests/Report
+    
+  api_tests:
+    image: api_tests
+    container_name: api_tests
+    build:
+      context: .
+      dockerfile: ./API.Tests/Dockerfile
+    command: dotnet test --no-build
+    volumes:
+      - C:\Reports\RunTestsInDocker\API:/project/API.Tests/Report
