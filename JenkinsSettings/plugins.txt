@@ -1,0 +1,52 @@
+# List of plugins to install
+# Based on https://github.com/jenkinsci/jenkins/blob/master/core/src/main/resources/jenkins/install/platform-plugins.json
+# To find more information about plugins go via link https://plugins.jenkins.io/{plugin-name}/
+
+# NOTE: The plugins selected for .NET project
+
+# Organization and Administration
+cloudbees-folder:latest 			# To create "folders" to organize jobs
+configuration-as-code:latest		# To configure Jenkins based on human-readable declarative configuration files
+antisamy-markup-formatter:latest	# To format descriptions of jobs, builds, views, etc. in Jenkins using a safe subset of HTML/OWASP Markup Formatter
+authorize-project:latest
+
+# Build Features
+# Add general purpose features to your jobs
+build-timeout:latest			# To automatically terminate a build if it’s taking too long. This plugin isn’t applicable to pipelines. Use the timeout step in workflow-basic-steps instead.
+credentials-binding:latest		# Allows credentials to be bound to environment variables for use from miscellaneous build steps
+timestamper:latest				# The Timestamper plugin adds timestamps to the console output of Jenkins jobs
+ws-cleanup:latest				# This plugin deletes the build workspace
+
+# Build Tools
+msbuild:latest					# Allows you to use MSBuild to build .NET and Visual Studio projects
+dotnet-sdk: latest				# Providing convenient use of .NET SDKs, specifically the SDKs for .NET Core and .NET 5.0
+
+# Build Analysis and Reporting
+nunit: latest					# This plugin allows you to publish NUnit test results
+htmlpublisher: latest			# To publish HTML reports that your build generates to the job and build pages. It works with Freestyle projects and in Jenkins Pipeline
+
+# Pipelines and Continuous Delivery
+workflow-aggregator:latest
+pipeline-github-lib:latest
+pipeline-stage-view:latest
+
+# Source Code Management
+git:latest
+git-parameter: latest
+github: latest
+github-branch-source:latest
+gitlab-plugin: latest
+
+# Distributed Builds
+ssh-slaves:latest
+
+# User Management and Security
+matrix-auth:latest
+pam-auth:latest
+ldap:latest
+
+# Notifications and Publishing
+email-ext:latest
+mailer:latest
+
+

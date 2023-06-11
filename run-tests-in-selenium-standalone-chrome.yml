@@ -1,66 +1,31 @@
 # ATTENTION
 # Before running to be sure that BrowserType in appsetting.json is Chrome/Chromium, because Selenium Grid supports only Chromium based browsers for Playwright
 
-# Running UI and API tests in separate docker containers
 # To execute this docker-compose yml file use `docker compose -f run-tests-in-selenium-standalone-chrome.yml up`
 # Add the `-d` flag at the end for detached execution
 # To stop the execution, hit Ctrl+C, and then `docker compose -f run-tests-in-selenium-standalone-chrome.yml down`
 
-version: '3'
-services:
-  # jenkins:
-    # image: my_jenkins
-    # container_name: my_jenkins
-    # build:
-      # context: ./JenkinsSettings
-      # dockerfile: Dockerfile
-    # ports:
-      # - 8080:8080
-      # - 50000:50000
-    # restart: always
-    
-  ui_tests:
-    image: ui_tests
-    container_name: ui_tests
-    build:
-      context: .
-      dockerfile: ./UI.Tests/Dockerfile
-    environment: 
-      - SELENIUM_REMOTE_URL=http://selenium_grid_standalone_chrome:4444
-      - SE_NODE_MAX_SESSIONS=4
-      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-    depends_on:
-      selenium_grid_standalone_chrome:
-        condition: service_healthy
-    command: dotnet test --no-build
-    volumes:
-      - C:\Reports\RunTestsInSeleniumStandalone\UI:/project/UI.Tests/Report
-    
-  api_tests:
-    image: api_tests
-    container_name: api_tests
-    build:
-      context: .
-      dockerfile: ./API.Tests/Dockerfile
-    environment: 
-      - SELENIUM_REMOTE_URL=http://selenium_grid_standalone_chrome:4444
-      - SE_NODE_MAX_SESSIONS=4
-      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-    depends_on:
-      - selenium_grid_standalone_chrome
-    command: dotnet test --no-build
-    volumes:
-      - C:\Reports\RunTestsInSeleniumStandalone\API:/project/API.Tests/Report
+# Before running tests to set SELENIUM_REMOTE_URL=http://localhost:4444
 
-  selenium_grid_standalone_chrome:
+version: '3'
+services:    
+  chrome:
     image: selenium/standalone-chrome
     shm_size: 2g
     environment: 
       - SE_NODE_GRID_URL=http://localhost:4444
+      - SE_NODE_MAX_SESSIONS=4
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
     ports:
       - 4444:4444
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:4444/wd/hub/status"]
-      interval: 1s
-      timeout: 10s
-      retries: 10
+
+  chrome_video:
+    image: selenium/video
+    volumes:
+      - C:\Reports\RunTestsInSeleniumStandalone\Videos:/videos
+    depends_on:
+      - chrome
+    environment:
+      - DISPLAY_CONTAINER_NAME=chrome
+      - FILE_NAME=chrome_video.mp4
+    

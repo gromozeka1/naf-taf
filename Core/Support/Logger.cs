@@ -18,7 +18,7 @@ public static class Logger
 
     public static void LogError(string? message)
     {
-        Log.Error("ERROR => !**!**!**!**!**!**!**!**!**!**!**!**!");
+        Log.Error("ERROR => !**!**!**!**!**!**!**!**!**!**!**!**!", message);
         Log.Error($"         {message}");
         Log.Error("         !**!**!**!**!**!**!**!**!**!**!**!**!");
     }
@@ -26,7 +26,7 @@ public static class Logger
     public static void TestStarted(ScenarioContext scenarioContext)
     {
         var scenarioName = scenarioContext.ScenarioInfo.Title;
-        Log.Information($"---------------Start test: {scenarioName} ----------------");
+        Log.Information($"--- Start test: {scenarioName} ---");
     }
 
 
@@ -34,7 +34,7 @@ public static class Logger
     {
         var scenarioName = scenarioContext.ScenarioInfo.Title;
         var testStatus = scenarioContext.ScenarioExecutionStatus == ScenarioExecutionStatus.OK ? "Successful" : "Failed";
-        Log.Information($"---------------Test {testStatus}: {scenarioName}----------------");
+        Log.Information($"--- Test {testStatus}: {scenarioName} ---");
     }
 
     public static async Task AttachScreenshotIfError(ScenarioContext scenarioContext)

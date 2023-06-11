@@ -33,6 +33,14 @@ public sealed class LoginSteps
         _scenarioContext.Set(user);
     }
 
+    [When(@"I enter '(.*)' login and '(.*)' password")]
+    public void WhenIEnterLoginDetails(string login, string password)
+    {
+        _loginPage.LogIn(login, password);
+        var user = new User { UserName = login, Password = password};
+        _scenarioContext.Set(user);
+    }
+
     [Then(@"I successfully login")]
     public async Task ThenISuccessfullyLogin()
     {

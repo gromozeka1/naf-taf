@@ -15,17 +15,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		README.md = README.md
+		run-tests-in-docker-with-selenium-standalone-chrome.yml = run-tests-in-docker-with-selenium-standalone-chrome.yml
 		run-tests-in-docker.yml = run-tests-in-docker.yml
-		run-tests-in-selenium-standalone-chrome.yml = run-tests-in-selenium-standalone-chrome.yml
 		run-tests-in-jenkins-in-volume.yml = run-tests-in-jenkins-in-volume.yml
+		run-tests-in-selenium-standalone-chrome.yml = run-tests-in-selenium-standalone-chrome.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JenkinsSettings", "JenkinsSettings", "{D40E8DFF-9C32-4586-911A-BA13BE5FE2EF}"
 	ProjectSection(SolutionItems) = preProject
-		JenkinsSettings\config.xml = JenkinsSettings\config.xml
+		JenkinsSettings\casc.yaml = JenkinsSettings\casc.yaml
 		JenkinsSettings\Dockerfile = JenkinsSettings\Dockerfile
+		JenkinsSettings\Jenkinsfile = JenkinsSettings\Jenkinsfile
 		JenkinsSettings\plugins.txt = JenkinsSettings\plugins.txt
-		JenkinsSettings\setup.groovy = JenkinsSettings\setup.groovy
 	EndProjectSection
 EndProject
 Global

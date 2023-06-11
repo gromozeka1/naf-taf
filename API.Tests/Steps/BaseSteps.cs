@@ -1,8 +1,5 @@
 ﻿using System.Text.Json;
 
-[assembly: Parallelizable(ParallelScope.Fixtures)]
-[assembly: LevelOfParallelism(4)]
-
 namespace API.Tests.Steps;
 
 public abstract class BaseSteps

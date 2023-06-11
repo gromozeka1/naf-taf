@@ -43,16 +43,13 @@ public class DriverInit : IDriverInit
     private static float? ToMilliseconds(float? seconds) => seconds * 1000;
 
 
-    private static string GetDriverName(string? driverType)
+    private static string GetDriverName(string? driverType) => driverType?.ToLower() switch
     {
-        return driverType?.ToLower() switch
-        {
-            "chrome" => BrowserType.Chromium,
-            "firefox" => BrowserType.Firefox,
-            "safari" => BrowserType.Webkit,
-            "edge" => BrowserType.Chromium,
-            "opera" => BrowserType.Chromium,
-            _ => BrowserType.Chromium,
-        };
-    }
+        "chrome" => BrowserType.Chromium,
+        "firefox" => BrowserType.Firefox,
+        "safari" => BrowserType.Webkit,
+        "edge" => BrowserType.Chromium,
+        "opera" => BrowserType.Chromium,
+        _ => BrowserType.Chromium,
+    };
 }

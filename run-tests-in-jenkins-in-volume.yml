@@ -13,8 +13,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8080:8080
+      - 50000:50000
+    environment:
+      - JENKINS_ADMIN_ID=admin
+      - JENKINS_ADMIN_PASSWORD=password
     volumes:
       - jenkins_home:/var/jenkins_home
+      - ./JenkinsSettings/Jenkinsfile:/var/jenkins_home/Jenkinsfile
 
 volumes:
   jenkins_home:
