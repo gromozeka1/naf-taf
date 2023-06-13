@@ -1,7 +1,4 @@
-#docker build -t jenkins:myj .
-#docker run --name jenkins --rm -p 8080:8080 --env JENKINS_ADMIN_ID=admin --env JENKINS_ADMIN_PASSWORD=password jenkins:myj
-
-FROM jenkins/jenkins:latest AS myj
+﻿FROM jenkins/jenkins:latest AS myj
 
 # Disable SetUp wizard for Jenkins
 ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
@@ -17,13 +14,26 @@ RUN jenkins-plugin-cli --plugins -f /usr/share/jenkins/ref/plugins.txt
 # Copy settings for Jenkins Configuration As Code plugin
 COPY casc.yaml /var/jenkins_home/casc.yaml
 
+# Install PowerShell
+RUN apt-get update \
+    && apt-get install -y curl \
+    && curl -sSL https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+    && curl -sSL https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/microsoft.list \
+    && apt-get update \
+    && apt-get install -y powershell
+
+# Install .NET dependencies
+RUN apt-get update && \
+    apt-get install -y libunwind8 libicu-dev lsb-release
+
+# Install .NET
+RUN apt-get update && apt-get install -y wget
+RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
+    && chmod +x ./dotnet-install.sh \
+    && ./dotnet-install.sh --channel 7.0 --install-dir /usr/share/dotnet \
+    && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
+
+# Delete temp file
+RUN rm dotnet-install.sh
+
 USER jenkins
-
-#
-## Dependency to run dotnet projects
-#RUN apt-get update && \
-    #apt-get install -y libunwind8 libicu-dev lsb-release
-#
-## Install docker CLI
-#RUN apt-get update && apt-get install -y docker-ce-cli
-

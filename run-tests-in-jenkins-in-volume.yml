@@ -19,7 +19,7 @@ services:
       - JENKINS_ADMIN_PASSWORD=password
     volumes:
       - jenkins_home:/var/jenkins_home
-      - ./JenkinsSettings/Jenkinsfile:/var/jenkins_home/Jenkinsfile
+      - ./Jenkinsfile:/var/jenkins_home/Jenkinsfile
 
 volumes:
   jenkins_home:
