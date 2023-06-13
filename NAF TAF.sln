@@ -14,7 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{618BEDED-937D-45E1-85D5-862C5F2657F9}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		JenkinsSettings\Jenkinsfile = JenkinsSettings\Jenkinsfile
+		Jenkinsfile = Jenkinsfile
 		README.md = README.md
 		run-tests-in-docker-with-selenium-standalone-chrome.yml = run-tests-in-docker-with-selenium-standalone-chrome.yml
 		run-tests-in-docker.yml = run-tests-in-docker.yml
@@ -26,8 +26,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JenkinsSettings", "JenkinsS
 	ProjectSection(SolutionItems) = preProject
 		JenkinsSettings\casc.yaml = JenkinsSettings\casc.yaml
 		JenkinsSettings\Dockerfile = JenkinsSettings\Dockerfile
-		JenkinsSettings\Jenkinsfile = JenkinsSettings\Jenkinsfile
-		Jenkinsfile = Jenkinsfile
 		JenkinsSettings\plugins.txt = JenkinsSettings\plugins.txt
 	EndProjectSection
 EndProject
