@@ -27,6 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JenkinsSettings", "JenkinsS
 		JenkinsSettings\casc.yaml = JenkinsSettings\casc.yaml
 		JenkinsSettings\Dockerfile = JenkinsSettings\Dockerfile
 		JenkinsSettings\Jenkinsfile = JenkinsSettings\Jenkinsfile
+		Jenkinsfile = Jenkinsfile
 		JenkinsSettings\plugins.txt = JenkinsSettings\plugins.txt
 	EndProjectSection
 EndProject
