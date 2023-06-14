@@ -48,5 +48,3 @@ ldap:latest
 # Notifications and Publishing
 email-ext:latest
 mailer:latest
-
-
