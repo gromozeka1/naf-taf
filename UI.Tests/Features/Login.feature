@@ -11,7 +11,6 @@ Scenario: Login with valid credentials
 Examples: 
 	| Username   | Password   |
 	| admin      | password   |
-	| failedTest | failedTest |
 
 Scenario: Login with invalid credentials
 	When I click login link
